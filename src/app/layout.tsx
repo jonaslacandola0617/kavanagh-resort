@@ -1,5 +1,5 @@
+import type { CSSProperties, ReactNode } from "react";
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -61,8 +61,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const fontVars = {
+    "--sans": "var(--font-manrope)",
+    "--serif": "var(--font-fraunces)",
+  } as CSSProperties;
+
   return (
-    <html lang="en-PH" className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang="en-PH" className={`${fraunces.variable} ${manrope.variable}`} style={fontVars}>
       <body>{children}</body>
     </html>
   );
