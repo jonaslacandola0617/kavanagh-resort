@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/prepare-hero.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/fetch-images.mjs",
+    "prebuild": "node scripts/fetch-images.mjs && node scripts/prepare-hero.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
