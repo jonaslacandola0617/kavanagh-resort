@@ -1,0 +1,678 @@
+/*
+ * Kavanagh — playful resort art-direction layer
+ * Keeps the calm blank-sheet composition, but shifts the emotional tone
+ * from editorial/luxury toward sunny, social, relaxed resort fun.
+ */
+
+:root {
+  --ink: #124955;
+  --ink-deep: #083b46;
+  --lagoon: #35b9c9;
+  --lagoon-soft: #d8f4f0;
+  --lagoon-pale: #effaf7;
+  --sand: #f8f0df;
+  --sand-light: #fffaf0;
+  --sun: #ffd45e;
+  --coral: #ff7b68;
+  --leaf: #4e7465;
+  --fun-pink: #f28aa5;
+  --fun-blue: #6fcfe0;
+  --fun-lime: #a9cf73;
+  --fun-shadow: rgba(26, 116, 126, .16);
+  --fun-bounce: cubic-bezier(.18, .9, .26, 1.25);
+}
+
+/* -------------------------------------------------------
+   Overall tone — more sun, less hotel-editorial restraint
+------------------------------------------------------- */
+body {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 212, 94, .14), transparent 22rem),
+    var(--sand-light);
+}
+
+.zero-site {
+  background: var(--sand-light);
+}
+
+.zero-kicker {
+  color: var(--ink);
+  letter-spacing: .14em;
+  font-weight: 800;
+}
+
+/* Headings are now bold/friendly sans; Fraunces is the playful accent. */
+.zero-hero h1,
+.day-intro h2,
+.journey-step h3,
+.cottage-heading h2,
+.cottage-panel-copy h3,
+.quiet-interlude blockquote,
+.dusk-heading h2,
+.photo-current-heading h2,
+.visit-main h2,
+.visit-orb span {
+  font-family: var(--sans);
+  font-weight: 780;
+  letter-spacing: -.065em;
+}
+
+.zero-hero h1 em,
+.day-intro h2 em,
+.cottage-heading h2 em,
+.quiet-interlude blockquote em,
+.dusk-heading h2 em,
+.photo-current-heading h2 em,
+.visit-main h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 380;
+  letter-spacing: -.045em;
+}
+
+.zero-brand-name {
+  font-family: var(--sans);
+  font-weight: 820;
+  letter-spacing: -.045em;
+}
+
+/* -------------------------------------------------------
+   Header — lighter, friendlier, still disciplined
+------------------------------------------------------- */
+.zero-header {
+  background: linear-gradient(180deg, rgba(255,250,240,.94), rgba(255,250,240,.70) 65%, transparent);
+}
+
+.zero-header-dot {
+  background: var(--fun-pink);
+  box-shadow: 0 0 0 5px rgba(242,138,165,.15);
+  animation: funDotPulse 2.8s ease-in-out infinite;
+}
+
+.zero-desktop-nav a::after {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--sun);
+}
+
+.zero-header-cta {
+  border-color: rgba(8,59,70,.14);
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 8px 26px rgba(8,59,70,.06);
+  transition: transform .28s var(--fun-bounce), background .28s ease;
+}
+
+.zero-header-cta:hover {
+  transform: translateY(-2px) rotate(-1deg);
+  background: #fff;
+}
+
+.zero-header-cta span {
+  background: var(--coral);
+  color: white;
+}
+
+.chapter-rail a:nth-child(1) i { color: var(--coral); }
+.chapter-rail a:nth-child(2) i { color: var(--lagoon); }
+.chapter-rail a:nth-child(3) i { color: var(--sun); }
+.chapter-rail a:nth-child(4) i { color: var(--fun-pink); }
+.chapter-rail a:nth-child(5) i { color: var(--fun-lime); }
+
+/* -------------------------------------------------------
+   Hero — sunny resort energy without visual clutter
+------------------------------------------------------- */
+.zero-hero {
+  background:
+    radial-gradient(circle at 10% 22%, rgba(255, 212, 94, .26), transparent 23%),
+    radial-gradient(circle at 42% 78%, rgba(111, 207, 224, .18), transparent 20%),
+    linear-gradient(180deg, #fffaf0 0%, #fff5e7 100%);
+}
+
+.zero-hero::before {
+  content: "";
+  position: absolute;
+  inset: 5rem auto auto 4.5%;
+  width: clamp(6rem, 10vw, 10rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(53,185,201,.22);
+  border-radius: 46% 54% 63% 37% / 52% 44% 56% 48%;
+  pointer-events: none;
+  animation: funBlob 8s ease-in-out infinite;
+}
+
+.zero-hero::after {
+  content: "";
+  position: absolute;
+  left: 34%;
+  bottom: 12%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--fun-pink);
+  box-shadow:
+    34px -22px 0 -3px var(--sun),
+    -22px 30px 0 -5px var(--lagoon),
+    58px 26px 0 -6px var(--coral);
+  opacity: .7;
+  pointer-events: none;
+  animation: funConfettiFloat 6s ease-in-out infinite;
+}
+
+.zero-hero h1 {
+  color: var(--ink-deep);
+  line-height: .86;
+}
+
+.zero-hero h1 em {
+  color: var(--coral);
+  transform: translateX(.12em) rotate(-2deg);
+  text-shadow: 0 8px 0 rgba(255,212,94,.22);
+}
+
+.zero-hero-lede {
+  color: rgba(18,73,85,.76);
+  font-weight: 520;
+}
+
+.zero-button {
+  transition: transform .28s var(--fun-bounce), box-shadow .3s ease, border-radius .3s ease;
+}
+
+.zero-button-dark {
+  color: var(--ink-deep);
+  background: var(--sun);
+  box-shadow: 0 14px 34px rgba(166,122,11,.18);
+}
+
+.zero-button-dark span {
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--coral);
+  color: white;
+}
+
+.zero-button:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  border-radius: 1.2rem 999px 999px 1.2rem;
+  box-shadow: 0 18px 42px rgba(70,112,105,.18);
+}
+
+.zero-text-link {
+  border-bottom-width: 2px;
+  border-color: var(--lagoon);
+}
+
+.zero-hero-meta span {
+  color: rgba(18,73,85,.66);
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(18,73,85,.08);
+  border-radius: 999px;
+  padding: .48rem .7rem;
+}
+
+.zero-hero-meta b { color: var(--coral); }
+
+.zero-hero-window {
+  border: 7px solid rgba(255,255,255,.72);
+  box-shadow:
+    0 34px 76px rgba(8,59,70,.18),
+    16px 14px 0 -3px rgba(53,185,201,.14);
+}
+
+.zero-hero-image {
+  filter: saturate(1.08) contrast(1.02);
+}
+
+.zero-hero-window figcaption {
+  background: rgba(8,59,70,.48);
+  border-color: rgba(255,255,255,.55);
+  border-radius: 1.2rem 1.2rem 1.2rem .25rem;
+}
+
+.zero-hero-window figcaption strong {
+  font-family: var(--sans);
+  font-weight: 750;
+}
+
+.zero-sun {
+  background: var(--sun);
+  border: 4px solid rgba(255,255,255,.75);
+  box-shadow:
+    0 16px 40px rgba(139,103,24,.14),
+    inset 0 0 0 1px rgba(8,59,70,.07);
+  border-radius: 50% 44% 53% 47% / 44% 53% 47% 56%;
+  animation: funSun 5.5s ease-in-out infinite;
+}
+
+.zero-sun span {
+  animation: funSunFace 8s linear infinite;
+}
+
+.zero-waterline path {
+  stroke: rgba(53,185,201,.82);
+  stroke-width: 3px;
+  stroke-dasharray: 3 14;
+}
+
+/* -------------------------------------------------------
+   Mood ribbon — playful but not a marquee circus
+------------------------------------------------------- */
+.breathing-line {
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(53,185,201,.12), transparent 28%, rgba(255,212,94,.22) 58%, transparent 80%),
+    var(--lagoon-soft);
+}
+
+.breathing-line::before,
+.breathing-line::after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(53,185,201,.2);
+}
+
+.breathing-line::before { left: -4rem; top: -4rem; }
+.breathing-line::after { right: -3rem; bottom: -5rem; width: 12rem; }
+
+.breathing-line p {
+  font-family: var(--sans);
+  font-weight: 720;
+  letter-spacing: -.025em;
+}
+
+.breathing-line i {
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 5px rgba(255,123,104,.10);
+}
+
+/* -------------------------------------------------------
+   Day journey — bolder captions, happier time-of-day cues
+------------------------------------------------------- */
+.day-intro h2 em { color: var(--lagoon); }
+
+.day-intro::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: .5rem;
+  margin: 2.2rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--coral) 0 33%, var(--sun) 33% 66%, var(--lagoon) 66%);
+}
+
+.journey-frame {
+  border: 6px solid rgba(255,255,255,.75);
+  box-shadow: 0 25px 60px var(--fun-shadow);
+}
+
+.journey-clock {
+  background: rgba(255,212,94,.93);
+  border: 3px solid rgba(255,255,255,.75);
+  box-shadow: 0 10px 26px rgba(8,59,70,.10);
+}
+
+.journey-clock span {
+  font-family: var(--sans);
+  font-weight: 800;
+}
+
+.journey-clock i {
+  width: 2px;
+  background: var(--coral);
+}
+
+.journey-caption span {
+  background: var(--coral);
+  border-color: rgba(255,255,255,.7);
+  font-weight: 800;
+}
+
+.journey-caption p { font-weight: 800; }
+
+.journey-step-index {
+  display: inline-grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: var(--sun);
+  color: var(--ink-deep);
+  font-family: var(--sans);
+  font-weight: 850;
+  box-shadow: 8px 8px 0 rgba(53,185,201,.14);
+}
+
+.journey-step h3 {
+  max-width: 9ch;
+}
+
+.journey-step.is-active h3 {
+  color: var(--ink-deep);
+}
+
+/* -------------------------------------------------------
+   Cottages — playful resort choices, not luxury cards
+------------------------------------------------------- */
+.cottage-landscape {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(255,212,94,.22), transparent 18rem),
+    radial-gradient(circle at 88% 88%, rgba(242,138,165,.14), transparent 22rem),
+    var(--lagoon-pale);
+}
+
+.cottage-heading h2 em { color: var(--coral); }
+
+.cottage-panel {
+  border: 5px solid rgba(255,255,255,.72);
+  box-shadow: 0 18px 48px rgba(8,59,70,.12);
+}
+
+.cottage-panel:nth-child(1) { border-radius: 5rem 1.4rem 4rem 1.4rem; }
+.cottage-panel:nth-child(2) { border-radius: 1.4rem 5rem 1.4rem 4rem; }
+.cottage-panel:nth-child(3) { border-radius: 4rem 1.4rem 5rem 1.4rem; }
+
+.cottage-panel:nth-child(1):hover,
+.cottage-panel:nth-child(1):focus-visible { box-shadow: 0 22px 54px rgba(53,185,201,.24); }
+.cottage-panel:nth-child(2):hover,
+.cottage-panel:nth-child(2):focus-visible { box-shadow: 0 22px 54px rgba(255,123,104,.22); }
+.cottage-panel:nth-child(3):hover,
+.cottage-panel:nth-child(3):focus-visible { box-shadow: 0 22px 54px rgba(255,212,94,.24); }
+
+.cottage-panel-number {
+  width: 3rem;
+  height: 3rem;
+  background: var(--sun);
+  color: var(--ink-deep);
+  font-weight: 850;
+  border: 3px solid rgba(255,255,255,.75);
+}
+
+.cottage-panel:nth-child(2) .cottage-panel-number { background: var(--coral); color: white; }
+.cottage-panel:nth-child(3) .cottage-panel-number { background: var(--lagoon); color: white; }
+
+.cottage-panel-copy span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0 .8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.32);
+  opacity: .92;
+}
+
+/* -------------------------------------------------------
+   Calm interlude — still restful, just warmer and friendlier
+------------------------------------------------------- */
+.quiet-interlude {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(53,185,201,.12), transparent 34%),
+    radial-gradient(circle at 20% 75%, rgba(255,212,94,.16), transparent 20%),
+    var(--sand-light);
+}
+
+.quiet-interlude blockquote em {
+  color: var(--coral);
+}
+
+.ripple-field i {
+  border-width: 2px;
+  border-color: rgba(53,185,201,.22);
+}
+
+/* -------------------------------------------------------
+   Dusk — fun evening energy, not moody luxury-hotel drama
+------------------------------------------------------- */
+.dusk-scene {
+  background:
+    radial-gradient(circle at 82% 14%, rgba(255,212,94,.11), transparent 24rem),
+    radial-gradient(circle at 18% 72%, rgba(53,185,201,.10), transparent 24rem),
+    linear-gradient(155deg, #083b46, #0b4b59 58%, #163e4f);
+}
+
+.dusk-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .42;
+  background-image:
+    radial-gradient(circle, rgba(255,212,94,.9) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,255,255,.55) 0 1px, transparent 1.8px);
+  background-position: 13% 18%, 74% 31%;
+  background-size: 97px 97px, 143px 143px;
+}
+
+.dusk-heading,
+.dusk-main-image,
+.dusk-copy,
+.dusk-detail { z-index: 3; }
+
+.dusk-heading h2 em { color: var(--sun); }
+
+.dusk-main-image {
+  border: 6px solid rgba(255,255,255,.16);
+  box-shadow: 0 30px 70px rgba(0,0,0,.24);
+}
+
+.dusk-copy {
+  background: rgba(8,59,70,.82);
+  border: 2px solid rgba(255,212,94,.18);
+}
+
+.dusk-copy a {
+  border: 0;
+  background: var(--sun);
+  color: var(--ink-deep);
+  border-radius: 999px;
+  padding: .72rem 1rem;
+  transition: transform .25s var(--fun-bounce);
+}
+
+.dusk-copy a:hover { transform: translateY(-3px) rotate(-1deg); }
+
+.dusk-detail {
+  border-width: 8px;
+  border-radius: .8rem;
+}
+
+/* -------------------------------------------------------
+   Photo current — more movement, still controlled
+------------------------------------------------------- */
+.photo-current {
+  background:
+    linear-gradient(180deg, rgba(216,244,240,.55), transparent 45%),
+    #f8f0df;
+}
+
+.photo-current-heading h2 em { color: var(--coral); }
+
+.current-frame {
+  border: 5px solid rgba(255,255,255,.78);
+  box-shadow: 0 16px 42px rgba(8,59,70,.12);
+  transition: transform .42s var(--fun-bounce), box-shadow .35s ease;
+}
+
+.current-frame:nth-child(1) { border-radius: 4.5rem 1rem 2.5rem 1rem; }
+.current-frame:nth-child(2) { border-radius: 1rem 4rem 1rem 3rem; }
+.current-frame:nth-child(3) { border-radius: 2rem 5rem 2rem 1rem; }
+.current-frame:nth-child(4) { border-radius: 4rem 1rem 4rem 1rem; }
+.current-frame:nth-child(5) { border-radius: 1rem 4rem 2rem 4rem; }
+
+.current-frame:hover {
+  transform: translateY(-14px) rotate(-1.25deg) scale(1.018);
+  box-shadow: 0 26px 58px rgba(8,59,70,.18);
+}
+
+.current-frame:nth-child(even):hover { transform: translateY(-14px) rotate(1.25deg) scale(1.018); }
+
+.current-frame figcaption {
+  font-weight: 800;
+}
+
+.current-frame figcaption span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--coral);
+  opacity: 1;
+}
+
+/* -------------------------------------------------------
+   Visit — sunny last impression, strong conversion moment
+------------------------------------------------------- */
+.visit-field {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255,212,94,.45), transparent 20rem),
+    radial-gradient(circle at 88% 82%, rgba(242,138,165,.22), transparent 22rem),
+    linear-gradient(145deg, #d9f4ef 0%, #bfe8e8 100%);
+}
+
+.visit-main h2 em { color: #e75f57; }
+
+.visit-orb {
+  background: var(--sun);
+  color: var(--ink-deep);
+  border: 5px solid rgba(255,255,255,.72);
+  box-shadow: 12px 15px 0 rgba(255,123,104,.23);
+  border-radius: 47% 53% 44% 56% / 55% 43% 57% 45%;
+  animation: funVisitBlob 7s ease-in-out infinite;
+}
+
+.visit-orb b {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--coral);
+  color: white;
+}
+
+.visit-orb:hover {
+  border-radius: 57% 43% 55% 45% / 42% 58% 42% 58%;
+  transform: rotate(-3deg) scale(1.045);
+}
+
+.visit-links a {
+  transition: padding-left .28s var(--fun-bounce), color .2s ease;
+}
+
+.visit-links a:hover {
+  padding-left: .6rem;
+  color: #e75f57;
+}
+
+.zero-footer {
+  position: relative;
+  overflow: hidden;
+  background: #083b46;
+}
+
+.zero-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lagoon), var(--sun), var(--coral), var(--fun-pink), var(--fun-lime));
+}
+
+/* -------------------------------------------------------
+   Motion language — buoyant, never frantic
+------------------------------------------------------- */
+@keyframes funDotPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+}
+
+@keyframes funBlob {
+  0%, 100% { transform: translate(0,0) rotate(0deg); border-radius: 46% 54% 63% 37% / 52% 44% 56% 48%; }
+  50% { transform: translate(10px,-8px) rotate(7deg); border-radius: 56% 44% 38% 62% / 44% 56% 44% 56%; }
+}
+
+@keyframes funConfettiFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-13px) rotate(10deg); }
+}
+
+@keyframes funSun {
+  0%, 100% { transform: translateY(0) rotate(0deg); border-radius: 50% 44% 53% 47% / 44% 53% 47% 56%; }
+  50% { transform: translateY(-12px) rotate(5deg); border-radius: 43% 57% 46% 54% / 55% 45% 55% 45%; }
+}
+
+@keyframes funSunFace {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes funVisitBlob {
+  0%, 100% { border-radius: 47% 53% 44% 56% / 55% 43% 57% 45%; }
+  50% { border-radius: 55% 45% 52% 48% / 45% 56% 44% 55%; }
+}
+
+/* -------------------------------------------------------
+   Responsive restraint — the fun should never become noise
+------------------------------------------------------- */
+@media (max-width: 900px) {
+  .zero-hero::before { left: -3rem; top: 7rem; opacity: .6; }
+  .zero-hero::after { left: auto; right: 13%; bottom: 43%; opacity: .45; }
+  .zero-hero-window { border-width: 5px; }
+  .day-intro::after { margin-left: 0; }
+  .cottage-panel:nth-child(1),
+  .cottage-panel:nth-child(2),
+  .cottage-panel:nth-child(3) { border-radius: 3.5rem 1rem; }
+  .cottage-panel:nth-child(1):hover,
+  .cottage-panel:nth-child(2):hover,
+  .cottage-panel:nth-child(3):hover,
+  .cottage-panel:nth-child(1):focus-visible,
+  .cottage-panel:nth-child(2):focus-visible,
+  .cottage-panel:nth-child(3):focus-visible { border-radius: 3.5rem 1rem; }
+  .current-frame:nth-child(1),
+  .current-frame:nth-child(2),
+  .current-frame:nth-child(3),
+  .current-frame:nth-child(4),
+  .current-frame:nth-child(5) { border-radius: 3rem 1rem; }
+}
+
+@media (max-width: 560px) {
+  .zero-hero h1,
+  .day-intro h2,
+  .journey-step h3,
+  .cottage-heading h2,
+  .quiet-interlude blockquote,
+  .dusk-heading h2,
+  .photo-current-heading h2,
+  .visit-main h2 {
+    letter-spacing: -.055em;
+  }
+
+  .zero-hero-meta span {
+    padding: .4rem .55rem;
+  }
+
+  .zero-hero::after { display: none; }
+  .visit-orb { box-shadow: 8px 10px 0 rgba(255,123,104,.22); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zero-header-dot,
+  .zero-hero::before,
+  .zero-hero::after,
+  .zero-sun,
+  .zero-sun span,
+  .visit-orb {
+    animation: none !important;
+  }
+}
