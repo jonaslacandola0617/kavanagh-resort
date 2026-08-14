@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Kavanagh Resort",
@@ -7,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Swimming, group cottages, and villa stays in Mabalacat City, Pampanga.",
     start_url: "/",
     display: "standalone",
-    background_color: "#fff9ed",
-    theme_color: "#0b3341",
+    background_color: "#fff7e8",
+    theme_color: "#102f3c",
   };
 }
