@@ -1,0 +1,52 @@
+/* Hero poster */
+.poster-hero { position: relative; min-height: 100svh; padding: 118px 28px 28px; background: #85d7e4; overflow: hidden; }
+.hero-photo-wrap { position: absolute; inset: 0; }
+.hero-photo { object-fit: cover; object-position: center; transform: scale(1.01); }
+.hero-photo-wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,36,47,.66) 0%, rgba(4,36,47,.18) 48%, rgba(4,36,47,.08) 100%), linear-gradient(0deg, rgba(5,40,52,.44), transparent 52%); }
+.hero-content { position: relative; z-index: 4; width: min(1480px, 100%); min-height: calc(100svh - 146px); margin: 0 auto; display: flex; flex-direction: column; justify-content: space-between; color: white; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 10px; width: max-content; padding: 9px 13px; border-radius: 999px; background: rgba(255,255,255,.86); color: var(--ink); font-family: "Fredoka", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; transform: rotate(-1.5deg); }
+.hero-kicker span { color: var(--orange); }
+.hero-title { max-width: 1050px; margin: auto 0 20px; font-size: clamp(5rem, 10.6vw, 11.2rem); font-weight: 700; line-height: .75; letter-spacing: -.065em; text-shadow: 0 6px 0 rgba(6,42,54,.14); }
+.hero-title span { display: block; }
+.hero-title span:nth-child(2) { margin-left: 7vw; color: #fff7d1; }
+.hero-splash-word { width: max-content; padding: .01em .08em .07em; border-radius: .28em; background: var(--pink); transform: rotate(-2deg); color: white !important; box-shadow: 10px 10px 0 var(--yellow); }
+.hero-bottom { max-width: 880px; padding-bottom: 14px; display: flex; align-items: end; gap: 28px; }
+.hero-bottom p { max-width: 520px; margin: 0; font-size: 17px; line-height: 1.65; font-weight: 700; text-shadow: 0 1px 10px rgba(0,0,0,.18); }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.button { min-height: 54px; padding: 0 22px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font-family: "Fredoka", sans-serif; font-size: 12px; font-weight: 600; transition: .22s ease; }
+.button:hover { transform: translateY(-3px) rotate(-1deg); }
+.button-pink { background: var(--pink); color: white; box-shadow: 0 7px 0 #a72d5c; }
+.button-glass { background: rgba(255,255,255,.82); color: var(--ink); box-shadow: 0 7px 0 rgba(16,47,60,.18); }
+.button-yellow { background: var(--yellow); color: var(--ink); box-shadow: 0 7px 0 #a99329; }
+.button-dark { background: var(--ink); color: white; box-shadow: 0 7px 0 #071c25; }
+.hero-sticker { position: absolute; z-index: 5; font-family: "Fredoka", sans-serif; font-weight: 700; }
+.hero-sticker-top { right: 5vw; top: 150px; width: 138px; height: 138px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: grid; place-items: center; text-align: center; transform: rotate(9deg); box-shadow: 9px 10px 0 rgba(16,47,60,.2); animation: floaty 4.5s ease-in-out infinite; }
+.hero-sticker-top strong,.hero-sticker-top span,.hero-sticker-top em { display: block; font-style: normal; line-height: .92; }
+.hero-sticker-top strong { font-size: 22px; }.hero-sticker-top span { font-size: 18px; color: var(--pink); }.hero-sticker-top em { font-size: 15px; }
+.hero-sticker-bottom { right: 7vw; bottom: 42px; padding: 13px 18px; border-radius: 16px; background: var(--blue); color: white; transform: rotate(3deg); box-shadow: 6px 7px 0 rgba(16,47,60,.26); }
+.hero-confetti .confetti { position: absolute; z-index: 3; display: block; border-radius: 999px; }
+.c1{width:18px;height:70px;background:var(--yellow);left:48%;top:14%;transform:rotate(24deg)}.c2{width:15px;height:52px;background:var(--pink);right:20%;top:24%;transform:rotate(-35deg)}.c3{width:24px;height:24px;background:var(--orange);left:36%;bottom:16%}.c4{width:16px;height:58px;background:var(--purple);right:4%;bottom:27%;transform:rotate(40deg)}.c5{width:22px;height:22px;background:var(--green);left:6%;top:45%}.c6{width:12px;height:48px;background:white;right:34%;top:12%;transform:rotate(70deg)}
+@keyframes floaty { 50% { transform: translateY(-8px) rotate(5deg); } }
+
+/* ticker */
+.wave-ticker { position: relative; z-index: 10; margin-top: -1px; padding: 19px 0 18px; background: var(--yellow); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(-1deg) scale(1.02); overflow: hidden; }
+.ticker-row { display: flex; width: max-content; gap: 22px; align-items: center; font-family: "Fredoka", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: .05em; animation: ticker 22s linear infinite; }
+.ticker-row b { color: var(--pink); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* day */
+.day-section { padding: 130px 0 150px; background: var(--cream); position: relative; }
+.day-heading { display: grid; grid-template-columns: .35fr 1fr; align-items: end; gap: 40px; margin-bottom: 62px; }
+.day-heading h2 { margin: 0; font-size: clamp(4rem, 8.2vw, 9rem); line-height: .78; letter-spacing: -.06em; font-weight: 700; }
+.day-cards { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; align-items: start; }
+.day-card { position: relative; border: 3px solid var(--ink); border-radius: 42px; overflow: hidden; box-shadow: 12px 14px 0 var(--ink); }
+.day-card-swim { background: #c8f2f6; }
+.day-card-play { margin-top: 110px; background: #ffd9e5; transform: rotate(1.2deg); }
+.day-card-image { position: relative; aspect-ratio: 16/11; overflow: hidden; }
+.day-card-copy { padding: 28px 30px 34px; }
+.day-card-copy > span { font: 800 11px/1 "Nunito Sans", sans-serif; letter-spacing: .15em; }
+.day-card h3 { margin: 12px 0 14px; font-size: clamp(3rem, 5.6vw, 6.2rem); line-height: .8; letter-spacing: -.055em; font-weight: 700; }
+.day-card p { max-width: 430px; margin: 0; font-size: 15px; line-height: 1.7; font-weight: 700; color: #3f6570; }
+.sun-badge { position: absolute; right: 24px; top: 24px; width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: var(--yellow); border: 3px solid var(--ink); font-size: 32px; box-shadow: 5px 6px 0 var(--ink); }
+.squiggle { position: absolute; right: 26px; bottom: 26px; font: 700 34px/1 "Fredoka", sans-serif; color: var(--pink); transform: rotate(-8deg); letter-spacing: -.16em; }
+
