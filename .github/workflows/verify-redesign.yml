@@ -1,0 +1,29 @@
+name: Verify Kavanagh redesign
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install dependencies
+        run: npm install
+      - name: Build static export
+        run: npm run build
+      - name: Upload static export
+        uses: actions/upload-artifact@v4
+        with:
+          name: kavanagh-redesign-out
+          path: out/
+          if-no-files-found: error
