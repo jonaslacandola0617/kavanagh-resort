@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://kavanagh-resort.vercel.app/sitemap.xml
