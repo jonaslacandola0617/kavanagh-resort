@@ -1,14 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..800&family=Manrope:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
-@import "./styles/calm.css";
-
-/* Licensed production font. The binary remains outside the public repository. */
-@font-face {
-  font-family: "Mikado Ultra";
-  src: url("/fonts/mikado-ultra.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-}
-
-html { font-synthesis: none; }
+@import "./styles/zero.css";
