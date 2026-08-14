@@ -1,6 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 @import "./styles/base.css";
 @import "./styles/hero.css";
 @import "./styles/sections.css";
 @import "./styles/responsive.css";
+
+/*
+ * Mikado Ultra is a licensed production asset and is intentionally not tracked
+ * in this public repository. Place the licensed WOFF2 at
+ * /public/fonts/mikado-ultra.woff2 for local/private production builds.
+ */
+@font-face {
+  font-family: "Mikado Ultra";
+  src: url("/fonts/mikado-ultra.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+html {
+  font-synthesis: none;
+}
+
+/* Kavanagh display system — actual Mikado Ultra, not Fredoka. */
+.hero-title,
+.day-heading h2,
+.day-card h3,
+.cottages-heading h2,
+.cottage-pass h3,
+.night-copy h2,
+.postcards-heading h2,
+.visit-copy h2,
+.final-inner h2,
+.mobile-menu nav a,
+.brand-letters,
+.mini-label,
+.brand-resort,
+.desktop-nav a,
+.nav-cta,
+.mobile-cta,
+.hero-kicker,
+.button,
+.hero-sticker,
+.ticker-row,
+.squiggle,
+.cottages-orbit,
+.pass-number,
+.night-word,
+.night-photo-main span,
+.postcard-caption,
+.cover-caption {
+  font-family: "Mikado Ultra", "Arial Rounded MT Bold", sans-serif;
+}
