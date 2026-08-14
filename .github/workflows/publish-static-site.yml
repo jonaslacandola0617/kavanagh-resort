@@ -1,0 +1,41 @@
+name: Publish audited Kavanagh static site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "site/**"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package.json
+      - run: npm install
+      - run: npm run build
+      - name: Refresh audited static snapshot
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp -a out/. site/
+      - name: Commit static snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site
+          if git diff --cached --quiet; then
+            echo "Static snapshot already current"
+            exit 0
+          fi
+          git commit -m "publish: refresh audited Kavanagh static site"
+          git push origin HEAD:main
