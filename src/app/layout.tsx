@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kavanagh-resort.vercel.app";
 const title = "Kavanagh Resort | Swimming Resort & Villa in Mabalacat, Pampanga";
@@ -33,10 +46,8 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/kavanagh-cover.png",
-        width: 960,
-        height: 365,
-        alt: "Kavanagh Resort pool and colorful Kavanagh Resort branding",
+        url: "/images/kavanagh-hero-calm.webp",
+        alt: "Kavanagh Resort water play pool with mountain view",
       },
     ],
   },
@@ -44,14 +55,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/images/kavanagh-cover.png"],
+    images: ["/images/kavanagh-hero-calm.webp"],
   },
   category: "travel",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en-PH">
+    <html lang="en-PH" className={`${fraunces.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );
