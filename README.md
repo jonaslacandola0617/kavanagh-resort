@@ -1,12 +1,19 @@
 # Kavanagh Resort
 
-Landing page for Kavanagh Resort in Mabalacat City, Pampanga.
+A responsive landing page for Kavanagh Resort in Mabalacat City, Pampanga.
 
 ## Stack
 
 - Next.js
 - TypeScript
 - Tailwind CSS
+
+## Highlights
+
+- Responsive resort-focused layout
+- Structured presentation of accommodations and visitor information
+- Optimized local media and social metadata
+- Mobile-friendly navigation and content sections
 
 ## Run locally
 
@@ -15,6 +22,8 @@ npm install
 npm run dev
 ```
 
-## Source policy
+## Production
 
-Website copy and media are grounded in the supplied Facebook source pack. Temporary promotions, unrelated property-sale content, scraper UI noise, and unsupported claims are intentionally excluded.
+```bash
+npm run build
+```
